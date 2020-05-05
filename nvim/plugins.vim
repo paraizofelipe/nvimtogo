@@ -14,6 +14,7 @@ Plug 'hecal3/vim-leader-guide'
 Plug 'qpkorr/vim-bufkill'
 Plug 'shougo/deoplete.nvim'
 Plug 'neomake/neomake'
+" Plug 'valloric/youcompleteme'
 
 call plug#end()
 
@@ -61,6 +62,10 @@ let g:NERDTreeHighlightFoldersFullName = 1
 " --- deoplete ---
 let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
+set completeopt=longest,menuone " auto complete setting
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#align_class = 1
 
 " --- vim-go ---
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
@@ -69,7 +74,17 @@ let g:go_highlight_types = 1
 let g:go_highlight_diagnostic_errors = 0
 let g:go_highlight_diagnostic_warnings = 0
 
+" --- YCM ---
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:syntastic_error_symbol = "✗"
+" let syntastic_style_error_symbol = "✗"
+" let g:syntastic_warning_symbol = "∙∙"
+" let syntastic_style_warning_symbol = "∙∙"
+
 " --- nomake ---
+autocmd BufWritePost * Neomake
+let g:neomake_go_enabled_makers = [ 'go', 'golint', 'govet' ]
 let g:neomake_open_list = 2
 call neomake#configure#automake('w')
 call neomake#configure#automake('nw', 750)
