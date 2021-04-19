@@ -4,6 +4,8 @@ RUN addgroup editor && useradd editor -g editor -d /home/editor
 
 RUN apt -y update && apt -y install git \
     build-essential \
+    curl \
+    unzip \
     wget
 
 ADD https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz /opt
