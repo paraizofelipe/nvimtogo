@@ -22,9 +22,18 @@ return require('packer').startup(function(use)
     -- Theme
     use 'morhetz/gruvbox'
 
+    -- Editor
+    use 'mg979/vim-visual-multi'
+    use 'mhinz/vim-startify'
+    use 'justinmk/vim-sneak'
+    use 'preservim/nerdcommenter'
+
     -- Color
     use 'norcalli/nvim-colorizer.lua'
     use 'sheerun/vim-polyglot'
+
+    -- Floatterm
+    use 'voldikss/vim-floaterm'
 
     -- LSP
     use 'neovim/nvim-lspconfig'
@@ -42,7 +51,7 @@ return require('packer').startup(function(use)
     use 'ryanoasis/vim-devicons'
 
     -- Status line
-    use { 'glepnir/galaxyline.nvim', config = my('nv-galaxyline') }
+    use { 'glepnir/galaxyline.nvim'}
     -- use 'glepnir/galaxyline.nvim'
 
     -- Treesitter

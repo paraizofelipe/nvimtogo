@@ -3,10 +3,14 @@ require('global-settings')
 require('plugins')
 require('colorscheme')
 
-require('nv-colorizer')
-require('nv-compe')
-require('nv-gitsigns')
+-- Load Plugins 
+require('plug-colorizer')
+require('plug-compe')
+require('plug-gitsigns')
+require('plug-galaxyline')
+require('plug-startify')
 
 -- LSP
 require('lsp')
 require('lsp.go-ls')
+require('lsp.lua-ls')
